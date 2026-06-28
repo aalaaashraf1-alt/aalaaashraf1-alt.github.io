@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - Portfolio Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <!-- Dashboard Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-cog"></i>
+                <span>لوحة التحكم</span>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                العودة للبورتفوليو
+            </a>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-menu">
+                <button class="menu-item active" data-section="hero">
+                    <i class="fas fa-home"></i>
+                    <span>القسم الرئيسي</span>
+                </button>
+                <button class="menu-item" data-section="about">
+                    <i class="fas fa-user"></i>
+                    <span>عني</span>
+                </button>
+                <button class="menu-item" data-section="skills">
+                    <i class="fas fa-tools"></i>
+                    <span>المهارات</span>
+                </button>
+                <button class="menu-item" data-section="experience">
+                    <i class="fas fa-briefcase"></i>
+                    <span>الخبرة</span>
+                </button>
+                <button class="menu-item" data-section="portfolio">
+                    <i class="fas fa-images"></i>
+                    <span>أعمالي</span>
+                </button>
+                <button class="menu-item" data-section="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>تواصل معي</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Hero Section Editor -->
+            <div class="editor-section active" id="hero-editor">
+                <h2><i class="fas fa-home"></i> تعديل القسم الرئيسي</h2>
+                <div class="glass-card">
+                    <div class="form-group">
+                        <label>صورة الملف الشخصي</label>
+                        <div class="image-upload">
+                            <input type="file" id="hero-profile-upload" accept="image/*" class="file-input">
+                            <label for="hero-profile-upload" class="upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>رفع صورة من الجهاز</span>
+                            </label>
+                            <img id="hero-profile-preview" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" alt="Preview">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>العنوان الرئيسي</label>
+                        <input type="text" id="hero-title-input" value="Social Media Specialist">
+                    </div>
+                    <div class="form-group">
+                        <label>الوصف الفرعي</label>
+                        <textarea id="hero-subtitle-input" rows="3">أحول الأفكار إلى محتوى إبداعي يصل للجمهور</textarea>
+                    </div>
+                    <button class="save-btn" data-section="hero">
+                        <i class="fas fa-save"></i>
+                        حفظ التغييرات
+                    </button>
+                </div>
+            </div>
+
+            <!-- About Section Editor -->
+            <div class="editor-section" id="about-editor">
+                <h2><i class="fas fa-user"></i> تعديل قسم "عني"</h2>
+                <div class="glass-card">
+                    <div class="form-group">
+                        <label>صورة القسم</label>
+                        <div class="image-upload">
+                            <input type="file" id="about-img-upload" accept="image/*" class="file-input">
+                            <label for="about-img-upload" class="upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>رفع صورة من الجهاز</span>
+                            </label>
+                            <img id="about-img-preview" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Preview">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>العنوان</label>
+                        <input type="text" id="about-title-input" value="أخصائي وسائل التواصل الاجتماعي">
+                    </div>
+                    <div class="form-group">
+                        <label>الوصف</label>
+                        <textarea id="about-description-input" rows="5">متخصص في إدارة وتطوير الحملات الرقمية مع خبرة 4 سنوات في مجال التسويق الرقمي. أساعد العلامات التجارية على بناء حضور قوي على منصات التواصل الاجتماعي من خلال استراتيجيات مبتكرة ومحتوى إبداعي يجذب الجمهور المستهدف.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>سنوات الخبرة</label>
+                        <input type="number" id="stat-years-input" value="4">
+                    </div>
+                    <div class="form-group">
+                        <label>عدد المشاريع</label>
+                        <input type="text" id="stat-projects-input" value="50+">
+                    </div>
+                    <div class="form-group">
+                        <label>عدد العملاء</label>
+                        <input type="text" id="stat-clients-input" value="30+">
+                    </div>
+                    <button class="save-btn" data-section="about">
+                        <i class="fas fa-save"></i>
+                        حفظ التغييرات
+                    </button>
+                </div>
+            </div>
+
+            <!-- Skills Section Editor -->
+            <div class="editor-section" id="skills-editor">
+                <h2><i class="fas fa-tools"></i> تعديل المهارات</h2>
+                <div class="glass-card">
+                    <div class="skills-editor">
+                        <div class="skill-edit-item">
+                            <div class="form-group">
+                                <label>المهارة 1 - الاسم</label>
+                                <input type="text" id="skill1-name" value="Media Buyer">
+                            </div>
+                            <div class="form-group">
+                                <label>الوصف</label>
+                                <input type="text" id="skill1-desc" value="إدارة الحملات الإعلانية وتحسين العائد على الاستثمار">
+                            </div>
+                            <div class="form-group">
+                                <label>المستوى (%)</label>
+                                <input type="number" id="skill1-level" value="95" min="0" max="100">
+                            </div>
+                        </div>
+                        <div class="skill-edit-item">
+                            <div class="form-group">
+                                <label>المهارة 2 - الاسم</label>
+                                <input type="text" id="skill2-name" value="Content Creation">
+                            </div>
+                            <div class="form-group">
+                                <label>الوصف</label>
+                                <input type="text" id="skill2-desc" value="إنشاء محتوى إبداعي وجذاب لجميع المنصات">
+                            </div>
+                            <div class="form-group">
+                                <label>المستوى (%)</label>
+                                <input type="number" id="skill2-level" value="90" min="0" max="100">
+                            </div>
+                        </div>
+                        <div class="skill-edit-item">
+                            <div class="form-group">
+                                <label>المهارة 3 - الاسم</label>
+                                <input type="text" id="skill3-name" value="Script Writing">
+                            </div>
+                            <div class="form-group">
+                                <label>الوصف</label>
+                                <input type="text" id="skill3-desc" value="كتابة سيناريوهات احترافية للفيديوهات والإعلانات">
+                            </div>
+                            <div class="form-group">
+                                <label>المستوى (%)</label>
+                                <input type="number" id="skill3-level" value="85" min="0" max="100">
+                            </div>
+                        </div>
+                        <div class="skill-edit-item">
+                            <div class="form-group">
+                                <label>المهارة 4 - الاسم</label>
+                                <input type="text" id="skill4-name" value="Creative Director">
+                            </div>
+                            <div class="form-group">
+                                <label>الوصف</label>
+                                <input type="text" id="skill4-desc" value="توجيه الإبداع وتطوير استراتيجيات المحتوى">
+                            </div>
+                            <div class="form-group">
+                                <label>المستوى (%)</label>
+                                <input type="number" id="skill4-level" value="88" min="0" max="100">
+                            </div>
+                        </div>
+                        <div class="skill-edit-item">
+                            <div class="form-group">
+                                <label>المهارة 5 - الاسم</label>
+                                <input type="text" id="skill5-name" value="Client Communication">
+                            </div>
+                            <div class="form-group">
+                                <label>الوصف</label>
+                                <input type="text" id="skill5-desc" value="التواصل الفعال مع العملاء وفهم احتياجاتهم">
+                            </div>
+                            <div class="form-group">
+                                <label>المستوى (%)</label>
+                                <input type="number" id="skill5-level" value="92" min="0" max="100">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="save-btn" data-section="skills">
+                        <i class="fas fa-save"></i>
+                        حفظ التغييرات
+                    </button>
+                </div>
+            </div>
+
+            <!-- Experience Section Editor -->
+            <div class="editor-section" id="experience-editor">
+                <h2><i class="fas fa-briefcase"></i> تعديل الخبرة</h2>
+                <div class="glass-card">
+                    <div class="experience-edit-item">
+                        <h3>الوظيفة الحالية</h3>
+                        <div class="form-group">
+                            <label>المسمى الوظيفي</label>
+                            <input type="text" id="exp-current-title-input" value="Senior Social Media Specialist">
+                        </div>
+                        <div class="form-group">
+                            <label>الشركة</label>
+                            <input type="text" id="exp-current-company-input" value="شركة التسويق الرقمي">
+                        </div>
+                        <div class="form-group">
+                            <label>الوصف</label>
+                            <textarea id="exp-current-desc-input" rows="3">إدارة استراتيجيات التواصل الاجتماعي للعملاء الكبار وتطوير الحملات الإعلانية</textarea>
+                        </div>
+                    </div>
+                    <div class="experience-edit-item">
+                        <h3>الوظيفة السابقة</h3>
+                        <div class="form-group">
+                            <label>المسمى الوظيفي</label>
+                            <input type="text" id="exp-prev-title-input" value="Social Media Executive">
+                        </div>
+                        <div class="form-group">
+                            <label>الشركة</label>
+                            <input type="text" id="exp-prev-company-input" value="وكالة إبداعية">
+                        </div>
+                        <div class="form-group">
+                            <label>الوصف</label>
+                            <textarea id="exp-prev-desc-input" rows="3">إنشاء المحتوى وإدارة الحملات على منصات التواصل الاجتماعي</textarea>
+                        </div>
+                    </div>
+                    <div class="experience-edit-item">
+                        <h3>بداية المسيرة</h3>
+                        <div class="form-group">
+                            <label>المسمى الوظيفي</label>
+                            <input type="text" id="exp-start-title-input" value="Content Creator">
+                        </div>
+                        <div class="form-group">
+                            <label>الشركة</label>
+                            <input type="text" id="exp-start-company-input" value="Freelance">
+                        </div>
+                        <div class="form-group">
+                            <label>الوصف</label>
+                            <textarea id="exp-start-desc-input" rows="3">بداية مسيرتي المهنية في إنشاء المحتوى الإبداعي</textarea>
+                        </div>
+                    </div>
+                    <button class="save-btn" data-section="experience">
+                        <i class="fas fa-save"></i>
+                        حفظ التغييرات
+                    </button>
+                </div>
+            </div>
+
+            <!-- Portfolio Section Editor -->
+            <div class="editor-section" id="portfolio-editor">
+                <h2><i class="fas fa-images"></i> تعديل الأعمال</h2>
+                <div class="glass-card">
+                    <div class="portfolio-editor-grid">
+                        <div class="portfolio-edit-item">
+                            <div class="form-group">
+                                <label>صورة العمل 1</label>
+                                <div class="image-upload">
+                                    <input type="file" id="portfolio1-upload" accept="image/*" class="file-input">
+                                    <label for="portfolio1-upload" class="upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span>رفع صورة</span>
+                                    </label>
+                                    <img id="portfolio1-preview" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop" alt="Preview">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>العنوان</label>
+                                <input type="text" id="portfolio1-title" value="حملة إعلانية">
+                            </div>
+                            <div class="form-group">
+                                <label>الوصف</label>
+                                <input type="text" id="portfolio1-desc" value="إدارة حملة إعلانية ناجحة">
+                            </div>
+                        </div>
+                        <div class="portfolio-edit-item">
+                            <div class="form-group">
+                                <label>صورة العمل 2</label>
+                                <div class="image-upload">
+                                    <input type="file" id="portfolio2-upload" accept="image/*" class="file-input">
+                                    <label for="portfolio2-upload" class="upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span>رفع صورة</span>
+                                    </label>
+                                    <img id="portfolio2-preview" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&h=300&fit=crop" alt="Preview">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>العنوان</label>
+                                <input type="text" id="portfolio2-title" value="محتوى إبداعي">
+                            </div>
+                            <div class="form-group">
+                                <label>الوصف</label>
+                                <input type="text" id="portfolio2-desc" value="إنشاء محتوى فيديو">
+                            </div>
+                        </div>
+                        <div class="portfolio-edit-item">
+                            <div class="form-group">
+                                <label>صورة العمل 3</label>
+                                <div class="image-upload">
+                                    <input type="file" id="portfolio3-upload" accept="image/*" class="file-input">
+                                    <label for="portfolio3-upload" class="upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span>رفع صورة</span>
+                                    </label>
+                                    <img id="portfolio3-preview" src="https://images.unsplash.com/photo-1432888622747-4eb9a8f5a70d?w=400&h=300&fit=crop" alt="Preview">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>العنوان</label>
+                                <input type="text" id="portfolio3-title" value="استراتيجية تواصل">
+                            </div>
+                            <div class="form-group">
+                                <label>الوصف</label>
+                                <input type="text" id="portfolio3-desc" value="تطوير استراتيجية متكاملة">
+                            </div>
+                        </div>
+                        <div class="portfolio-edit-item">
+                            <div class="form-group">
+                                <label>صورة العمل 4</label>
+                                <div class="image-upload">
+                                    <input type="file" id="portfolio4-upload" accept="image/*" class="file-input">
+                                    <label for="portfolio4-upload" class="upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span>رفع صورة</span>
+                                    </label>
+                                    <img id="portfolio4-preview" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" alt="Preview">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>العنوان</label>
+                                <input type="text" id="portfolio4-title" value="إدارة علامة تجارية">
+                            </div>
+                            <div class="form-group">
+                                <label>الوصف</label>
+                                <input type="text" id="portfolio4-desc" value="بناء حضور رقمي">
+                            </div>
+                        </div>
+                        <div class="portfolio-edit-item">
+                            <div class="form-group">
+                                <label>صورة العمل 5</label>
+                                <div class="image-upload">
+                                    <input type="file" id="portfolio5-upload" accept="image/*" class="file-input">
+                                    <label for="portfolio5-upload" class="upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span>رفع صورة</span>
+                                    </label>
+                                    <img id="portfolio5-preview" src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=400&h=300&fit=crop" alt="Preview">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>العنوان</label>
+                                <input type="text" id="portfolio5-title" value="سيناريو إعلاني">
+                            </div>
+                            <div class="form-group">
+                                <label>الوصف</label>
+                                <input type="text" id="portfolio5-desc" value="كتابة سيناريو احترافي">
+                            </div>
+                        </div>
+                        <div class="portfolio-edit-item">
+                            <div class="form-group">
+                                <label>صورة العمل 6</label>
+                                <div class="image-upload">
+                                    <input type="file" id="portfolio6-upload" accept="image/*" class="file-input">
+                                    <label for="portfolio6-upload" class="upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span>رفع صورة</span>
+                                    </label>
+                                    <img id="portfolio6-preview" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=300&fit=crop" alt="Preview">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>العنوان</label>
+                                <input type="text" id="portfolio6-title" value="تحليل أداء">
+                            </div>
+                            <div class="form-group">
+                                <label>الوصف</label>
+                                <input type="text" id="portfolio6-desc" value="تحليل وتقارير الأداء">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="save-btn" data-section="portfolio">
+                        <i class="fas fa-save"></i>
+                        حفظ التغييرات
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contact Section Editor -->
+            <div class="editor-section" id="contact-editor">
+                <h2><i class="fas fa-envelope"></i> تعديل معلومات التواصل</h2>
+                <div class="glass-card">
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" id="contact-email-input" value="contact@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الهاتف</label>
+                        <input type="text" id="contact-phone-input" value="+20 123 456 7890">
+                    </div>
+                    <div class="form-group">
+                        <label>الموقع</label>
+                        <input type="text" id="contact-location-input" value="القاهرة، مصر">
+                    </div>
+                    <div class="form-group">
+                        <label>رابط فيسبوك</label>
+                        <input type="text" id="social-facebook-input" value="#">
+                    </div>
+                    <div class="form-group">
+                        <label>رابط إنستجرام</label>
+                        <input type="text" id="social-instagram-input" value="#">
+                    </div>
+                    <div class="form-group">
+                        <label>رابط لينكد إن</label>
+                        <input type="text" id="social-linkedin-input" value="#">
+                    </div>
+                    <div class="form-group">
+                        <label>رابط تويتر</label>
+                        <input type="text" id="social-twitter-input" value="#">
+                    </div>
+                    <button class="save-btn" data-section="contact">
+                        <i class="fas fa-save"></i>
+                        حفظ التغييرات
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>تم الحفظ بنجاح!</h3>
+            <p>تم تحديث البيانات بنجاح</p>
+            <button class="modal-close-btn" onclick="closeModal()">حسناً</button>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
