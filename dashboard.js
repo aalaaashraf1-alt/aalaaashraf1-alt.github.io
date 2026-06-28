@@ -1,9 +1,27 @@
 // Dashboard JavaScript
 document.addEventListener('DOMContentLoaded', function() {
+    // Check if user is logged in
+    if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+        window.location.href = 'login.html';
+        return;
+    }
+    
+    // Check session timeout (30 minutes)
+    const loginTime = sessionStorage.getItem('loginTime');
+    if (loginTime) {
+        const elapsed = new Date().getTime() - parseInt(loginTime);
+        if (elapsed > 30 * 60 * 1000) { // 30 minutes
+            sessionStorage.clear();
+            window.location.href = 'login.html';
+            return;
+        }
+    }
+    
     loadDashboardData();
     setupNavigation();
     setupImageUploads();
     setupSaveButtons();
+    setupLogout();
 });
 
 // Load saved data into dashboard inputs
@@ -298,4 +316,23 @@ function showSuccessModal() {
 function closeModal() {
     const modal = document.getElementById('success-modal');
     modal.classList.remove('active');
+}
+
+// Setup logout functionality
+function setupLogout() {
+    // Add logout button to nav if it doesn't exist
+    const navContainer = document.querySelector('.nav-container');
+    if (!document.querySelector('.logout-btn')) {
+        const logoutBtn = document.createElement('button');
+        logoutBtn.className = 'logout-btn';
+        logoutBtn.innerHTML = '<i class="fas fa-sign-out-alt"></i> تسجيل الخروج';
+        logoutBtn.onclick = logout;
+        navContainer.appendChild(logoutBtn);
+    }
+}
+
+// Logout function
+function logout() {
+    sessionStorage.clear();
+    window.location.href = 'login.html';
 }

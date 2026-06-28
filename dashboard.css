@@ -108,6 +108,26 @@ body {
     box-shadow: 0 5px 20px rgba(74, 44, 122, 0.4);
 }
 
+.logout-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(238, 90, 90, 0.4);
+}
+
 /* Dashboard Container */
 .dashboard-container {
     display: flex;
