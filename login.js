@@ -2,8 +2,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
     
-    // Default password (you can change this)
-    const DEFAULT_PASSWORD = 'admin123';
+    // Default credentials (you can change this)
+    const DEFAULT_USERNAME = 'zain';
+    const DEFAULT_PASSWORD = 'zain206';
     
     // Check if user is already logged in
     if (sessionStorage.getItem('isLoggedIn') === 'true') {
@@ -14,22 +15,25 @@ document.addEventListener('DOMContentLoaded', function() {
     loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
+        const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         const errorMessage = document.getElementById('errorMessage');
         
-        if (password === DEFAULT_PASSWORD) {
+        if (username === DEFAULT_USERNAME && password === DEFAULT_PASSWORD) {
             // Set login session
             sessionStorage.setItem('isLoggedIn', 'true');
             sessionStorage.setItem('loginTime', new Date().getTime());
+            sessionStorage.setItem('username', DEFAULT_USERNAME);
             
             // Redirect to dashboard
             window.location.href = 'dashboard.html';
         } else {
             // Show error message
-            errorMessage.textContent = 'كلمة المرور غير صحيحة';
+            errorMessage.textContent = 'اسم المستخدم أو كلمة المرور غير صحيحة';
             errorMessage.style.display = 'block';
             
-            // Clear password field
+            // Clear fields
+            document.getElementById('username').value = '';
             document.getElementById('password').value = '';
             
             // Shake animation
